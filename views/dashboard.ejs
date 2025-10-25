@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Secure App</h1>
+      <nav>
+        <a href="/logout" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">
+          Logout
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow max-w-6xl mx-auto px-6 py-10">
+    <div class="bg-white shadow-lg rounded-2xl p-8">
+      <h2 class="text-2xl font-bold text-gray-700 mb-4">Welcome, <%= username %> 🎉</h2>
+      <p class="text-gray-600 mb-6">
+        You are now signed in successfully. This dashboard demonstrates a 
+        <span class="font-semibold text-blue-600">stateless authentication process</span> 
+        using <span class="font-semibold">JWT (JSON Web Tokens)</span>.
+      </p>
+
+      <!-- Tech Stack Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-50 p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold text-gray-700 mb-2">🔑 Authentication</h3>
+          <p class="text-gray-600 text-sm">
+            - Stateless login system using JWT tokens <br>
+            - No session data stored on server <br>
+            - Tokens are verified on every request <br>
+            - Ensures secure, scalable authentication
+          </p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold text-gray-700 mb-2">⚙️ Technologies Used</h3>
+          <ul class="list-disc list-inside text-gray-600 text-sm">
+            <li>Node.js – Runtime environment</li>
+            <li>Express.js – Backend framework</li>
+            <li>TailwindCSS – Styling</li>
+            <li>EJS – Templating engine</li>
+            <li>JWT – Stateless authentication</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Extra Info Section -->
+      <div class="mt-8 bg-green-50 p-6 rounded-lg border border-green-200">
+        <h3 class="text-lg font-semibold text-green-700 mb-2">📢 Why JWT?</h3>
+        <p class="text-gray-700 text-sm">
+          Unlike session-based authentication, JWT doesn’t store user state on the server. 
+          Instead, all user info is encoded into the token itself. This makes the system:
+        </p>
+        <ul class="list-disc list-inside text-gray-700 text-sm mt-2">
+          <li>Scalable – no centralized session store needed</li>
+          <li>Stateless – easy to manage across distributed systems</li>
+          <li>Secure – tokens can be signed and verified using secret keys</li>
+          <li>Flexible – tokens can carry extra metadata like roles and permissions</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 text-center text-gray-600 py-4">
+    <p class="text-sm">
+      Built with ❤️ using Node.js, Express.js, TailwindCSS, EJS, and JWT Authentication.
+    </p>
+  </footer>
+
+</body>
+</html>
